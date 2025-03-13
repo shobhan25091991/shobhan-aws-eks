@@ -10,14 +10,14 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "tcslabsfjbs"
+    bucket = "tcslabsfjbs-shobhan"
     key    = "eks/terraform.tfstate"
-    region = "us-east-1"
+    region = "eu-west-1"
   }
 }
 # Variables
 variable "cluster_name" {
-  default     = "eks-vijay"
+  default     = "eks-shobhan"
   description = "give a cluster name"
   type        = string
 }
@@ -29,7 +29,7 @@ variable "vpc_cidr" {
 
 variable "aws_region" {
   description = "region for resource creation"
-  default     = "us-east-1"
+  default     = "eu-west-1"
   type        = string
 }
 
@@ -47,7 +47,7 @@ variable "eks_node_disk_size" {
 variable "availability_zones" {
   description = "List of availability zones to use"
   type        = list(string)
-  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  default     = ["eu-west-1", "us-east-1b", "us-east-1c"]
 }
 
 variable "private_subnet_cidrs" {
